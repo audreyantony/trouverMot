@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>trouverCode</title>
+</head>
+<body>
+<h1 class="display-4 text-center">Trouve les occurences dans un texte !</h1>
+
+
+<form class="container-md text-center">
+    <div class="form-group">
+        <label for="texte">Votre texte :</label>
+        <textarea id="texte" name="texte" class="form-control shadow-lg p-4 mb-4 bg-white" aria-label="With textarea"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="mot">Votre mot :</label>
+        <input type="text" name="mot" class="form-control shadow-lg p-4 mb-4 bg-white" id="mot">
+    </div>
+    <h3 id="Affichage" class="display-6 text-center"> </h3><br>
+    <button type="button" class="btn btn-secondary " onclick="Affichage()">Go !</button>
+</form>
+
+<script>
+
+    let affichage = document.getElementById("Affichage");
+    let string = " Vas y !";
+
+
+    function trouverMot(){
+        const texte = document.getElementById("texte").value;
+        const mot = document.getElementById("mot").value;
+        const div = texte.split(" ");
+
+        let index = 0;
+        let result = 0;
+        let resultIndex = [];
+
+        for (let i = 0 ; i < div.length ; i++) {
+            if (div[i].includes(mot)){
+                result += 1;
+            }
+        }
+
+        while ((index = texte.indexOf(mot, index)) !== (-1)){
+            resultIndex.push(texte.indexOf(mot,index));
+            index++;
+        }
+
+        return ` Tu peux trouver le mot " ${mot} " ${result} fois dans le texte, index : ${resultIndex}`;
+    }
+
+    function Affichage(){
+        string = trouverMot();
+        affichage.textContent = string;
+    }
+
+
+</script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
