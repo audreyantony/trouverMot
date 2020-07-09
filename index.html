@@ -5,26 +5,34 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #content {
+            margin-top: 10%;
+        }
+    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>trouverCode</title>
 </head>
 <body>
-<h1 class="display-4 text-center">Trouve les occurences dans un texte !</h1>
+
+<div id="content">
+    <h1 class="display-4 text-center">Trouve les occurences dans un texte !</h1>
 
 
-<form class="container-md text-center">
-    <div class="form-group">
-        <label for="texte">Votre texte :</label>
-        <textarea id="texte" name="texte" class="form-control shadow-lg p-4 mb-4 bg-white" aria-label="With textarea" required>Ceci est un exemple, exemple, exemple</textarea>
-    </div>
-    <div class="form-group">
-        <label for="mot">Votre mot :</label>
-        <input type="text" name="mot" class="form-control shadow-lg p-4 mb-4 bg-white" id="mot" value="exemple" required>
-    </div>
-    <h3 id="Affichage" class="display-6 text-center"> </h3><br>
-    <button type="button" class="btn btn-secondary " onclick="Affichage()">Go !</button>
-</form>
+    <form class="container-md text-center ">
+        <div class="form-group">
+            <label for="texte">Votre texte :</label>
+            <textarea id="texte" name="texte" class="form-control shadow-lg p-4 mb-4 bg-white" aria-label="With textarea" required>Ceci est un exemple, exemple, exemple</textarea>
+        </div>
+        <div class="form-group">
+            <label for="mot">Votre mot :</label>
+            <input type="text" name="mot" class="form-control shadow-lg p-4 mb-4 bg-white" id="mot" value="exemple" required>
+        </div>
+        <h3 id="Affichage" class="display-6 text-center"> </h3><br>
+        <button type="button" class="btn btn-secondary " onclick="Affichage()">Go !</button>
+    </form>
+</div>
 
 <script>
 
